@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1955,100 +1955,6 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/Layout.js":
-/*!*************************!*\
-  !*** ./pages/Layout.js ***!
-  \*************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var Next_Head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Next/Head */ "Next/Head");
-/* harmony import */ var Next_Head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(Next_Head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\ReactJS\\reactproject\\next_assingment\\pages\\Layout.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const Layout = props => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: undefined
-  }, __jsx(Next_Head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  }, __jsx("title", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }, props.title || "next.js")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, props.children));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Layout);
-
-/***/ }),
-
-/***/ "./pages/about.js":
-/*!************************!*\
-  !*** ./pages/about.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Layout */ "./pages/Layout.js");
-var _jsxFileName = "C:\\ReactJS\\reactproject\\next_assingment\\pages\\about.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const About = () => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, "About"), __jsx(_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "about",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: undefined
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (About);
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -2067,7 +1973,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var antd_lib_input_Password__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/lib/input/Password */ "antd/lib/input/Password");
 /* harmony import */ var antd_lib_input_Password__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_input_Password__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about */ "./pages/about.js");
+/* harmony import */ var _student__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./student */ "./pages/student.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
@@ -2096,24 +2002,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       e.preventDefault();
 
       if (this.state.userInput === this.state.password) {
-        __jsx("div", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          },
-          __self: this
-        }, " ", __jsx(_about__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          },
-          __self: this
-        })); // console.log("you are on new page")
-
-
-        {
-          Location: `/about`;
-        }
+        console.log("you are no next page");
       } else {
         console.log("please enter the valid input");
       }
@@ -2124,13 +2013,13 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 30
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Form"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 31
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2141,7 +2030,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 33
         },
         __self: this
       }),
@@ -2155,7 +2044,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 32
       },
       __self: this
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2166,7 +2055,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 42
         },
         __self: this
       }),
@@ -2181,13 +2070,13 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 41
       },
       __self: this
     }), __jsx("center", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 50
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -2196,7 +2085,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       onClick: this.onButtonPress,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 51
       },
       __self: this
     }, "Log in"))));
@@ -2208,7 +2097,145 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
 
 /***/ }),
 
-/***/ 3:
+/***/ "./pages/student.js":
+/*!**************************!*\
+  !*** ./pages/student.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/dist/antd.css */ "./node_modules/antd/dist/antd.css");
+/* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_3__);
+
+var _jsxFileName = "C:\\ReactJS\\reactproject\\next_assingment\\pages\\student.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
+      firstName: "",
+      lastName: "",
+      age: null
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", e => {
+      e.preventDefault();
+
+      if (this.state.age > 18) {
+        console.log("you are over 18 ");
+      } else {
+        console.log("you are under 18 ");
+      }
+    });
+  }
+
+  render() {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, __jsx("h4", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, "First Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+      placeholder: "Username",
+      required: true,
+      value: this.state.firstName,
+      onChange: e => {
+        this.setState({
+          firstName: e.target.value
+        });
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }), __jsx("h4", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }, "Last Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+      type: "text",
+      placeholder: "Last Name",
+      required: true,
+      value: this.state.lastName,
+      onChange: e => {
+        this.setState({
+          lastName: e.target.value
+        });
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }), __jsx("h4", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }, "Age"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+      type: "text",
+      placeholder: "Age",
+      required: true,
+      value: this.state.age,
+      onChange: e => {
+        this.setState({
+          age: e.target.value
+        });
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }), __jsx("center", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      className: "",
+      type: "primary",
+      htmlType: "submit",
+      onClick: this.onSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }, "Log in"))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Student);
+
+/***/ }),
+
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2217,17 +2244,6 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
 
 module.exports = __webpack_require__(/*! C:\ReactJS\reactproject\next_assingment\pages\index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "Next/Head":
-/*!****************************!*\
-  !*** external "Next/Head" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("Next/Head");
 
 /***/ }),
 

@@ -1,8 +1,7 @@
 import "antd/dist/antd.css";
 import React from 'react'
 import { Form, Icon, Input, Button } from 'antd';
-import Password from "antd/lib/input/Password";
-import About from './about'
+import student from './student'
 import { Link } from 'next/link'
 import Router from 'next/router'
 
@@ -18,9 +17,8 @@ class App extends React.Component {
     onButtonPress = (e) => {
         e.preventDefault();
         if (this.state.userInput === this.state.password) {
-            <div> <About /></div>
-            // console.log("you are on new page")
-            { Location: `/about` }
+
+            console.log("you are no next page")
 
         } else {
             console.log("please enter the valid input")
