@@ -19,13 +19,20 @@ class App extends React.Component {
 
     onButtonPress = (e) => {
         e.preventDefault();
-        if (this.state.userInput === this.state.password && this.state.userInput.includes("@") && this.state.password !== "") {
-            this.setState({ errorUserInput: "" })
-            Router.push('/student')
+        // if (this.state.userInput === this.state.password && this.state.userInput.includes("@") && this.state.password !== "") {
 
+        //     //Router.push('/student')
+
+        // }
+
+        if ((this.state.userInput == "") || (this.state.password == "") || (this.state.userInput == "" && this.state.password == "")) {
+            alert("Invalid Credentials")
+            Router.push('/index')
         }
-        else {
-            this.setState({ errorUserInput: "invalid credentials" })
+
+
+        else if ((this.state.userInput === this.state.password) && this.state.userInput.includes("@")) {
+            Router.push('/student')
         }
 
 

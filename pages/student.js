@@ -2,6 +2,7 @@
 import React from 'react'
 import { Row, Col, Input, Form, Button } from 'antd';
 import "antd/dist/antd.css";
+import Router from 'next/router'
 
 
 class Student extends React.Component {
@@ -15,13 +16,19 @@ class Student extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        if (this.state.age > 18) {
-            console.log("you are over 18 ")
-
-        } else {
-            console.log("you are under 18 ")
+        if ((this.state.age == "") && (this.state.firstName == "") && (this.state.lastName == "")) {
+            alert("Invalid Arguments")
         }
+        else if ((this.state.age < 18) && (this.state.firstName != "") && (this.state.lastName != "")) {
+            alert("you are under 18 ")
+            this.setState({ firstName: "" })
+            this.setState({ lastName: "" })
+            this.setState({ age: "" })
 
+        }
+        else {
+            Router.push('/success')
+        }
 
     }
     render() {

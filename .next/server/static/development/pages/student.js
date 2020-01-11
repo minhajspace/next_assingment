@@ -161,9 +161,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/dist/antd.css */ "./node_modules/antd/dist/antd.css");
 /* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 
 var _jsxFileName = "C:\\ReactJS\\reactproject\\next_assingment\\pages\\student.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -182,10 +185,21 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", e => {
       e.preventDefault();
 
-      if (this.state.age > 18) {
-        console.log("you are over 18 ");
+      if (this.state.age == "" && this.state.firstName == "" && this.state.lastName == "") {
+        alert("Invalid Arguments");
+      } else if (this.state.age < 18 && this.state.firstName != "" && this.state.lastName != "") {
+        alert("you are under 18 ");
+        this.setState({
+          firstName: ""
+        });
+        this.setState({
+          lastName: ""
+        });
+        this.setState({
+          age: ""
+        });
       } else {
-        console.log("you are under 18 ");
+        next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push('/success');
       }
     });
   }
@@ -194,14 +208,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 38
       },
       __self: this
     }, __jsx("label", {
       htmlFor: "First Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 40
       },
       __self: this
     }, "First Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -215,14 +229,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 41
       },
       __self: this
     }), __jsx("label", {
       htmlFor: "Last Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 50
       },
       __self: this
     }, "Last Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -237,14 +251,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 51
       },
       __self: this
     }), __jsx("label", {
       htmlFor: "Age",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 63
       },
       __self: this
     }, "Age"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -259,19 +273,19 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 64
       },
       __self: this
     }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 73
       },
       __self: this
     }, __jsx("center", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 74
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -281,7 +295,7 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       onClick: this.onSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 75
       },
       __self: this
     }, "Save")))));
@@ -324,6 +338,17 @@ module.exports = require("antd");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
