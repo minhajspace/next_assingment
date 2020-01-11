@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1971,17 +1971,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var antd_lib_input_Password__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/lib/input/Password */ "antd/lib/input/Password");
-/* harmony import */ var antd_lib_input_Password__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_input_Password__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _student__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./student */ "./pages/student.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _student__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./student */ "./pages/student.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
 
 var _jsxFileName = "C:\\ReactJS\\reactproject\\next_assingment\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
 
 
 
@@ -1995,16 +1992,23 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
       userInput: "",
-      password: ""
+      password: "",
+      errorUserInput: "",
+      errorPassword: ""
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onButtonPress", e => {
       e.preventDefault();
 
-      if (this.state.userInput === this.state.password) {
-        console.log("you are no next page");
+      if (this.state.userInput === this.state.password && this.state.userInput.includes("@") && this.state.password !== "") {
+        this.setState({
+          errorUserInput: ""
+        });
+        next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push('/student');
       } else {
-        console.log("please enter the valid input");
+        this.setState({
+          errorUserInput: "invalid credentials"
+        });
       }
     });
   }
@@ -2013,13 +2017,14 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 36
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Form"], {
+      onSubmit: this.onValid,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 37
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2030,24 +2035,31 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 39
         },
         __self: this
       }),
       placeholder: "Username",
+      type: "email",
       value: this.state.userInput,
+      required: true,
       onChange: e => {
         this.setState({
           userInput: e.target.value
         });
       },
-      required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 38
       },
       __self: this
-    }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, this.state.errorUserInput), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
       prefix: __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
         type: "lock",
         style: {
@@ -2055,7 +2067,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 49
         },
         __self: this
       }),
@@ -2070,22 +2082,29 @@ class App extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 48
       },
       __self: this
-    }), __jsx("center", {
+    }), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 57
+      },
+      __self: this
+    }, this.state.errorPassword), __jsx("center", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       type: "primary",
       htmlType: "submit",
       onClick: this.onButtonPress,
+      type: "submit",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 59
       },
       __self: this
     }, "Log in"))));
@@ -2127,7 +2146,8 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
       firstName: "",
       lastName: "",
-      age: null
+      age: "",
+      error: ""
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", e => {
@@ -2145,13 +2165,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 31
       },
       __self: this
-    }, __jsx("h4", {
+    }, __jsx("label", {
+      htmlFor: "First Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 33
       },
       __self: this
     }, "First Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2165,13 +2186,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 34
       },
       __self: this
-    }), __jsx("h4", {
+    }), __jsx("label", {
+      htmlFor: "Last Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 43
       },
       __self: this
     }, "Last Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2186,13 +2208,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 44
       },
       __self: this
-    }), __jsx("h4", {
+    }), __jsx("label", {
+      htmlFor: "Age",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 56
       },
       __self: this
     }, "Age"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -2207,13 +2230,19 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 57
       },
       __self: this
-    }), __jsx("center", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 66
+      },
+      __self: this
+    }, __jsx("center", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -2223,10 +2252,10 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       onClick: this.onSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 68
       },
       __self: this
-    }, "Log in"))));
+    }, "Save")))));
   }
 
 }
@@ -2235,7 +2264,7 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2255,17 +2284,6 @@ module.exports = __webpack_require__(/*! C:\ReactJS\reactproject\next_assingment
 /***/ (function(module, exports) {
 
 module.exports = require("antd");
-
-/***/ }),
-
-/***/ "antd/lib/input/Password":
-/*!******************************************!*\
-  !*** external "antd/lib/input/Password" ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("antd/lib/input/Password");
 
 /***/ }),
 

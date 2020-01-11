@@ -8,35 +8,43 @@ import Router from 'next/router'
 
 
 
+
 class App extends React.Component {
     state = {
         userInput: "",
-        password: ""
+        password: "",
+        errorUserInput: "",
+        errorPassword: ""
     }
 
     onButtonPress = (e) => {
         e.preventDefault();
-        if (this.state.userInput === this.state.password) {
+        if (this.state.userInput === this.state.password && this.state.userInput.includes("@") && this.state.password !== "") {
+            this.setState({ errorUserInput: "" })
+            Router.push('/student')
 
-            console.log("you are no next page")
-
-        } else {
-            console.log("please enter the valid input")
+        }
+        else {
+            this.setState({ errorUserInput: "invalid credentials" })
         }
 
+
     }
+
+
     render() {
         return (<div>
-            <Form >
+            <Form onSubmit={this.onValid}>
                 <Input
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                     placeholder="Username"
+                    type="email"
                     value={this.state.userInput}
-                    onChange={(e) => { this.setState({ userInput: e.target.value }) }}
                     required
-
+                    onChange={(e) => { this.setState({ userInput: e.target.value }) }}
                 />
 
+                <p>{this.state.errorUserInput}</p>
                 <Input
                     prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                     type="password"
@@ -46,8 +54,9 @@ class App extends React.Component {
                     required
 
                 />
+                <p>{this.state.errorPassword}</p>
                 <center>
-                    <Button type="primary" htmlType="submit" onClick={this.onButtonPress}>
+                    <Button type="primary" htmlType="submit" onClick={this.onButtonPress} type="submit">
                         Log in
           </Button>
                 </center>

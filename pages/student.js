@@ -8,18 +8,20 @@ class Student extends React.Component {
     state = {
         firstName: "",
         lastName: "",
-        age: null
+        age: "",
+        error: ""
     }
+
 
     onSubmit = (e) => {
         e.preventDefault();
         if (this.state.age > 18) {
-
             console.log("you are over 18 ")
 
         } else {
             console.log("you are under 18 ")
         }
+
 
     }
     render() {
@@ -27,16 +29,18 @@ class Student extends React.Component {
             <>
 
                 <Form >
-                    <h4>First Name</h4>
+
+                    <label htmlFor="First Name">First Name</label>
                     <Input
                         placeholder="Username"
-                        required={true}
+                        required
                         value={this.state.firstName}
                         onChange={(e) => {
                             this.setState({ firstName: e.target.value })
                         }}
                     />
-                    <h4>Last Name</h4>
+
+                    <label htmlFor="Last Name">Last Name</label>
                     <Input
 
                         type="text"
@@ -48,7 +52,8 @@ class Student extends React.Component {
                         }}
 
                     />
-                    <h4>Age</h4>
+
+                    <label htmlFor="Age">Age</label>
                     <Input
                         type="text"
                         placeholder="Age"
@@ -58,11 +63,13 @@ class Student extends React.Component {
                             this.setState({ age: e.target.value })
                         }}
                     />
-                    <center>
-                        <Button className="" type="primary" htmlType="submit" onClick={this.onSubmit} >
-                            Log in
-          </Button>
-                    </center>
+                    <div>
+                        <center>
+                            <Button className="" type="primary" htmlType="submit" onClick={this.onSubmit} >
+                                Save
+                          </Button>
+                        </center>
+                    </div>
                 </Form>
 
 
