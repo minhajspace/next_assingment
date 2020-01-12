@@ -115,8 +115,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-onClick = () => {};
-
 const Layout = props => {
   console.log({
     props
@@ -124,32 +122,32 @@ const Layout = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 14
     },
     __self: undefined
   }, __jsx("center", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 15
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 16
     },
     __self: undefined
   }, "Form submited successfully "), __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 18
     },
     __self: undefined
   }, ` Name : ${props.router.query.firstName} ${props.router.query.firstName} `), __jsx("input", {
     type: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 19
     },
     __self: undefined
   }, "clickme")));
