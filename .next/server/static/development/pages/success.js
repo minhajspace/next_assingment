@@ -106,8 +106,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\ReactJS\\reactproject\\next_assingment\\pages\\success.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -118,22 +122,28 @@ const Layout = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx("center", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 14
     },
     __self: undefined
-  }, "Form submit successfully "), __jsx("h2", {
+  }, "Form submited successfully "), __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 16
     },
     __self: undefined
-  }, "First Name ", props.router.query.firstName, " "));
+  }, ` Name : ${props.router.query.firstName} ${props.router.query.firstName} `)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Layout));
@@ -149,6 +159,17 @@ const Layout = props => {
 
 module.exports = __webpack_require__(/*! C:\ReactJS\reactproject\next_assingment\pages\success.js */"./pages/success.js");
 
+
+/***/ }),
+
+/***/ "antd":
+/*!***********************!*\
+  !*** external "antd" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd");
 
 /***/ }),
 

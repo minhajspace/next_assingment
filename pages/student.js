@@ -5,14 +5,12 @@ import "antd/dist/antd.css";
 import Router from 'next/router';
 
 class Student extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            firstName: "",
-            lastName: "",
-            age: ""
 
-        }
+    state = {
+        firstName: "",
+        lastName: "",
+        age: ""
+
     }
     onSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +26,7 @@ class Student extends React.Component {
         else {
             Router.push({
                 pathname: '/success',
-                query: { firstName }
+                query: { firstName, lastName }
             });
 
         }
@@ -82,9 +80,9 @@ class Student extends React.Component {
                     />
                     <div>
                         <center>
-                            <Button className="" type="primary" htmlType="submit" onClick={this.onSubmit} >
-                                Save
-                          </Button>
+                            <Button type="primary" htmlType="submit" type="submit" onClick={this.onSubmit}>
+                                save
+          </Button>
                         </center>
                     </div>
                 </Form>

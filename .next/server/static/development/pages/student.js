@@ -172,8 +172,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
+  constructor(...args) {
+    super(...args);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
+      firstName: "",
+      lastName: "",
+      age: ""
+    });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", e => {
       e.preventDefault();
@@ -196,44 +202,39 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
           pathname: '/success',
           query: {
-            firstName
+            firstName,
+            lastName
           }
         });
       }
     });
-
-    this.state = {
-      firstName: "",
-      lastName: "",
-      age: ""
-    };
   }
 
   render() {
     return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 40
       },
       __self: this
     }, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 41
       },
       __self: this
     })), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
       className: "ant - advanced - search - form",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 46
       },
       __self: this
     }, __jsx("label", {
       htmlFor: "First Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 48
       },
       __self: this
     }, "First Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -247,14 +248,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 49
       },
       __self: this
     }), __jsx("label", {
       htmlFor: "Last Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 58
       },
       __self: this
     }, "Last Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -269,14 +270,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 59
       },
       __self: this
     }), __jsx("label", {
       htmlFor: "Age",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 71
       },
       __self: this
     }, "Age"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -291,32 +292,32 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 72
       },
       __self: this
     }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 81
       },
       __self: this
     }, __jsx("center", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 82
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-      className: "",
       type: "primary",
       htmlType: "submit",
+      type: "submit",
       onClick: this.onSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 83
       },
       __self: this
-    }, "Save")))));
+    }, "save")))));
   }
 
 }
