@@ -115,6 +115,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+onClick = () => {};
+
 const Layout = props => {
   console.log({
     props
@@ -122,28 +124,35 @@ const Layout = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 16
     },
     __self: undefined
   }, __jsx("center", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 17
     },
     __self: undefined
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 18
     },
     __self: undefined
   }, "Form submited successfully "), __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 20
     },
     __self: undefined
-  }, ` Name : ${props.router.query.firstName} ${props.router.query.firstName} `)));
+  }, ` Name : ${props.router.query.firstName} ${props.router.query.firstName} `), __jsx("input", {
+    type: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, "clickme")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Layout));

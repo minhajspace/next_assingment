@@ -1,10 +1,8 @@
 import "antd/dist/antd.css";
 import React from 'react'
 import { Form, Icon, Input, Button } from 'antd';
-import student from './student'
-import { Link } from 'next/link'
 import Router from 'next/router'
-import Student from "./student";
+
 
 
 
@@ -19,11 +17,6 @@ class App extends React.Component {
 
     onButtonPress = (e) => {
         e.preventDefault();
-        // if (this.state.userInput === this.state.password && this.state.userInput.includes("@") && this.state.password !== "") {
-
-        //     //Router.push('/student')
-
-        // }
 
         if ((this.state.userInput == "") || (this.state.password == "") || (this.state.userInput == "" && this.state.password == "")) {
             alert("Invalid Credentials")
@@ -48,7 +41,7 @@ class App extends React.Component {
                     placeholder="Username"
                     type="email"
                     value={this.state.userInput}
-                    required
+
                     onChange={(e) => { this.setState({ userInput: e.target.value }) }}
                 />
 
@@ -59,7 +52,6 @@ class App extends React.Component {
                     placeholder="Password"
                     value={this.state.password}
                     onChange={(e) => { this.setState({ password: e.target.value }) }}
-                    required
 
                 />
                 <p>{this.state.errorPassword}</p>
