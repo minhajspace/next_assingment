@@ -4,6 +4,7 @@ import { Form, Icon, Input, Button } from 'antd';
 import student from './student'
 import { Link } from 'next/link'
 import Router from 'next/router'
+import Student from "./student";
 
 
 
@@ -13,8 +14,7 @@ class App extends React.Component {
     state = {
         userInput: "",
         password: "",
-        errorUserInput: "",
-        errorPassword: ""
+
     }
 
     onButtonPress = (e) => {
@@ -41,6 +41,7 @@ class App extends React.Component {
 
     render() {
         return (<div>
+
             <Form onSubmit={this.onValid}>
                 <Input
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}

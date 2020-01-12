@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -172,50 +172,68 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(...args) {
-    super(...args);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
-      firstName: "",
-      lastName: "",
-      age: "",
-      error: ""
-    });
+  constructor(props) {
+    super(props);
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", e => {
       e.preventDefault();
+      const {
+        firstName,
+        age,
+        lastName
+      } = this.state;
 
-      if (this.state.age == "" && this.state.firstName == "" && this.state.lastName == "") {
+      if (age == "" && firstName == "" && lastName == "") {
         alert("Invalid Arguments");
-      } else if (this.state.age < 18 && this.state.firstName != "" && this.state.lastName != "") {
+      } else if (age < 18 && firstName !== "" && lastName !== "") {
         alert("you are under 18 ");
         this.setState({
-          firstName: ""
-        });
-        this.setState({
-          lastName: ""
-        });
-        this.setState({
+          firstName: "",
+          lastName: "",
           age: ""
         });
       } else {
-        next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push('/success');
+        next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
+          pathname: '/success',
+          query: {
+            firstName
+          }
+        });
       }
     });
+
+    this.state = {
+      firstName: "",
+      lastName: "",
+      age: ""
+    };
   }
 
   render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 42
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      },
+      __self: this
+    })), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+      className: "ant - advanced - search - form",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
       },
       __self: this
     }, __jsx("label", {
       htmlFor: "First Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 50
       },
       __self: this
     }, "First Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -229,14 +247,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 51
       },
       __self: this
     }), __jsx("label", {
       htmlFor: "Last Name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 60
       },
       __self: this
     }, "Last Name"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -251,14 +269,14 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 61
       },
       __self: this
     }), __jsx("label", {
       htmlFor: "Age",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 73
       },
       __self: this
     }, "Age"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -273,19 +291,19 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 74
       },
       __self: this
     }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 83
       },
       __self: this
     }, __jsx("center", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 84
       },
       __self: this
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -295,7 +313,7 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       onClick: this.onSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 85
       },
       __self: this
     }, "Save")))));
@@ -307,7 +325,7 @@ class Student extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/student.js ***!
   \********************************/

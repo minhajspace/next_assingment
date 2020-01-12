@@ -1,41 +1,51 @@
 
-import React from 'react'
-import { Row, Col, Input, Form, Button } from 'antd';
+import React from 'react';
+import { Row, Col, Input, Form, Button, Layout } from 'antd';
 import "antd/dist/antd.css";
-import Router from 'next/router'
-
+import Router from 'next/router';
 
 class Student extends React.Component {
-    state = {
-        firstName: "",
-        lastName: "",
-        age: "",
-        error: ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            firstName: "",
+            lastName: "",
+            age: ""
+
+        }
     }
-
-
     onSubmit = (e) => {
         e.preventDefault();
-        if ((this.state.age == "") && (this.state.firstName == "") && (this.state.lastName == "")) {
+        const { firstName, age, lastName } = this.state;
+        if ((age == "") && (firstName == "") && (lastName == "")) {
             alert("Invalid Arguments")
         }
-        else if ((this.state.age < 18) && (this.state.firstName != "") && (this.state.lastName != "")) {
+        else if ((age < 18) && (firstName !== "") && (lastName !== "")) {
             alert("you are under 18 ")
-            this.setState({ firstName: "" })
-            this.setState({ lastName: "" })
-            this.setState({ age: "" })
+            this.setState({ firstName: "", lastName: "", age: "" });
 
         }
         else {
-            Router.push('/success')
+            Router.push({
+                pathname: '/success',
+                query: { firstName }
+            });
+
         }
 
     }
+
+
     render() {
         return (
             <>
+                <div>
+                    <div>
 
-                <Form >
+                    </div>
+
+                </div>
+                <Form className="ant - advanced - search - form" >
 
                     <label htmlFor="First Name">First Name</label>
                     <Input
@@ -79,10 +89,14 @@ class Student extends React.Component {
                     </div>
                 </Form>
 
-
-
             </>
+
         )
+
+
+
+
+
     }
 }
 export default Student
